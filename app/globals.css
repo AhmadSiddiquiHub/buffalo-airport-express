@@ -1,26 +1,335 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  background-color: #fff;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+h2 {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 28px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background: #000;
+  color: #fff;
+  position: relative;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.navbar ul li {
+  margin: 0;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.btn {
+  background-color: #ff5722;
+  padding: 10px 15px;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hamburger-menu div {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+/* Hero Section */
+.hero {
+  background: url("/images/hero-bg.jpg") no-repeat center center/cover;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+/* Services */
+.service-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px;
+}
+
+.service-card {
+  padding: 20px;
+  background: #f4f4f4;
+  text-align: center;
+  border-radius: 5px;
+  width: 200px;
+}
+
+/* Car Fleet */
+.fleet-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px;
+}
+
+.car-card {
+  text-align: center;
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.car-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Testimonials */
+.testimonial-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px;
+}
+
+.testimonial-card {
+  background: #ff5722;
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
+  width: 200px;
+  text-align: center;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  background: #000;
+  color: white;
+  padding: 20px;
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    display: none; /* Hide the nav by default */
+  }
+
+  .navbar ul li {
+    margin: 10px 0;
+  }
+
+  .hamburger-menu {
+    display: flex; /* Show hamburger menu */
+  }
+
+  .navbar ul.show {
+    display: flex; /* Show the menu when 'show' class is added */
+  }
+
+  .service-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .service-card {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .fleet-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .car-card {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .testimonial-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .testimonial-card {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero {
+    height: 400px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@media screen and (max-width: 480px) {
+  .navbar {
+    padding: 10px;
+  }
+
+  .navbar ul {
+    margin-top: 10px;
+  }
+
+  .navbar ul li {
+    margin: 5px 0;
+  }
+
+  .hero h1 {
+    font-size: 24px;
+  }
+
+  .service-card,
+  .car-card,
+  .testimonial-card {
+    width: 100%;
+  }
+}
+
+/* Form */
+.booking-form {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #121212; /* Dark background */
+  color: #fff; /* White text */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Booking Form */
+form {
+  background: #1e1e1e;
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0px 4px 10px rgba(255, 87, 34, 0.5);
+}
+
+/* Section Headings */
+h2 {
+  color: #ff5722;
+  text-align: center;
+  border-bottom: 2px solid #ff5722;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+/* Labels */
+label {
+  display: block;
+  font-weight: bold;
+  margin: 10px 0 5px;
+}
+
+/* Input Fields */
+input,
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ff5722;
+  border-radius: 5px;
+  background-color: #282828;
+  color: white;
+  box-sizing: border-box;
+}
+
+/* Two Fields in One Row */
+.form-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.form-row div {
+  flex: 1;
+  min-width: 150px; /* Prevents inputs from getting too small */
+}
+
+/* Radio Buttons */
+input[type="radio"] {
+  width: auto;
+  margin-right: 5px;
+}
+
+/* Buttons */
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ff5722;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #e64a19;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  form {
+    width: 95%;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 10px;
+  }
 }
