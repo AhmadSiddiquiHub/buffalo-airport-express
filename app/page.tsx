@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>NOVA RIDE - Car Rental</title>
+        <title>Dan Van Winkle - Car Rental</title>
         <meta name="description" content="Best car rental service" />
       </Head>
 
