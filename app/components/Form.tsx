@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Form = () => {
   const [formData, setFormData] = useState({
@@ -21,6 +21,13 @@ const Form = () => {
     children: "",
     car_type: "sedan",
   });
+
+  useEffect(() => {
+    // This ensures the form data is set after the component mounts, avoiding mismatch.
+    setFormData((prevData) => ({
+      ...prevData,
+    }));
+  }, []); // This effect runs once, after the component mounts.
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -65,52 +72,54 @@ const Form = () => {
         onChange={handleRadioChange}
       />
       No
-      <div
-        id="non-airport"
-        style={{ display: formData.airport === "no" ? "block" : "none" }}
-      >
-        <div className="form-row">
-          <div>
-            <label>Pickup Location:</label>
-            <input
-              type="text"
-              name="pickup_location"
-              value={formData.pickup_location}
-              onChange={handleChange}
-            />
+      {formData.airport === "no" && (
+        <div
+          id="non-airport"
+          style={{ display: formData.airport === "no" ? "block" : "none" }}
+        >
+          <div className="form-row">
+            <div>
+              <label>Pickup Location:</label>
+              <input
+                type="text"
+                name="pickup_location"
+                value={formData.pickup_location}
+                onChange={handleChange}
+              />
+            </div>
+            <div>
+              <label>Pickup Time:</label>
+              <input
+                type="time"
+                name="pickup_time"
+                value={formData.pickup_time}
+                onChange={handleChange}
+              />
+            </div>
           </div>
-          <div>
-            <label>Pickup Time:</label>
-            <input
-              type="time"
-              name="pickup_time"
-              value={formData.pickup_time}
-              onChange={handleChange}
-            />
-          </div>
-        </div>
 
-        <div className="form-row">
-          <div>
-            <label>Dropoff Location:</label>
-            <input
-              type="text"
-              name="dropoff_location"
-              value={formData.dropoff_location}
-              onChange={handleChange}
-            />
-          </div>
-          <div>
-            <label>Dropoff Time:</label>
-            <input
-              type="time"
-              name="dropoff_time"
-              value={formData.dropoff_time}
-              onChange={handleChange}
-            />
+          <div className="form-row">
+            <div>
+              <label>Dropoff Location:</label>
+              <input
+                type="text"
+                name="dropoff_location"
+                value={formData.dropoff_location}
+                onChange={handleChange}
+              />
+            </div>
+            <div>
+              <label>Dropoff Time:</label>
+              <input
+                type="time"
+                name="dropoff_time"
+                value={formData.dropoff_time}
+                onChange={handleChange}
+              />
+            </div>
           </div>
         </div>
-      </div>
+      )}
       <div
         id="airport-details"
         style={{ display: formData.airport === "yes" ? "block" : "none" }}

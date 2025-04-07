@@ -12,26 +12,27 @@ const Header = () => {
 
   return (
     <header className="navbar">
-      <div className="logo">BUFFALO AIRPORT EXPRESS</div>
+      <div className="logo">
+        <Link className="logo-img" href="/">
+          BUFFALO AIRPORT EXPRESS
+        </Link>
+      </div>
+
       <nav>
         <ul className={`navbar-links ${isMenuOpen ? "show" : ""}`}>
           <li>
-            <Link href="#">Home</Link>
+            <Link href="/">Home</Link>
           </li>
           <li>
-            <Link href="#">Services</Link>
+            <Link href="/policies/privacy-policy">Privacy Policy</Link>
           </li>
           <li>
-            <Link href="#">Fleet</Link>
+            <Link href="/policies/refund-policy">Refund Policy</Link>
           </li>
           <li>
-            <Link href="#">Testimonials</Link>
-          </li>
-          <li>
-            <Link href="#">Blog</Link>
-          </li>
-          <li>
-            <Link href="#">Contact</Link>
+            <Link href="/policies/terms-and-conditions">
+              Terms & Conditions
+            </Link>
           </li>
         </ul>
       </nav>

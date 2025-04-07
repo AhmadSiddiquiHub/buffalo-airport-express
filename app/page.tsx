@@ -11,9 +11,7 @@ export default function Home() {
         <meta name="description" content="Best car rental service" />
       </Head>
 
-      <Header />
       <Hero />
-      <Footer />
       {/* <Services />
       <Fleet />
       <BookingForm /> */}
