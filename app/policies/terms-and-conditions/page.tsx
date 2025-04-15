@@ -10,36 +10,35 @@ const TermsAndConditions = () => {
           <h2 className="main-title">TERMS AND CONDITIONS</h2>
 
           <div className="terms-block">
-            {/* <h3>1. Introduction</h3> */}
             <p>
-              Welcome to Airport Express (“Company,” “we,” “our,” or “us”).
-              These Terms and Conditions (“Terms”) govern your use of our
-              website and our airport transportation services (the “Services”).
-              By accessing or using our Services, you agree to comply with these
-              Terms. If you do not agree, please do not use our Services.
+              Welcome to Airport Express (&ldquo;Company,&rdquo;
+              &ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;). These
+              Terms and Conditions (&ldquo;Terms&rdquo;) govern your use of our
+              website and our airport transportation services (the
+              &ldquo;Services&rdquo;). By accessing or using our Services, you
+              agree to comply with these Terms. If you do not agree, please do
+              not use our Services.
             </p>
           </div>
 
           <div className="terms-block">
             <h3>1. Services</h3>
-            <p>
-              <ul>
-                <li>
-                  1.1 We provide transportation services to and from airports as
-                  per the bookings made through our website, phone, or other
-                  authorized booking platforms.
-                </li>
-                <li>
-                  1.2 Service availability may vary based on location, weather,
-                  and other unforeseen circumstances.
-                </li>
-                <li>
-                  1.3 We reserve the right to refuse service to anyone at our
-                  discretion for reasons including but not limited to safety
-                  concerns or policy violations.
-                </li>
-              </ul>
-            </p>
+            <ul>
+              <li>
+                1.1 We provide transportation services to and from airports as
+                per the bookings made through our website, phone, or other
+                authorized booking platforms.
+              </li>
+              <li>
+                1.2 Service availability may vary based on location, weather,
+                and other unforeseen circumstances.
+              </li>
+              <li>
+                1.3 We reserve the right to refuse service to anyone at our
+                discretion for reasons including but not limited to safety
+                concerns or policy violations.
+              </li>
+            </ul>
           </div>
 
           <div className="terms-block">
@@ -144,14 +143,14 @@ const TermsAndConditions = () => {
               </li>
             </ul>
 
-            <br></br>
+            <br />
             <p>
               For any questions regarding this Terms and Conditions, please
               contact us at
             </p>
             <p>
-              buffaloairportexpress@yahoo.com , (800) 604 – 1570, or (716) 472 -
-              8580
+              buffaloairportexpress@yahoo.com , (800) 604 &ndash; 1570, or (716)
+              472 &ndash; 8580
             </p>
           </div>
         </div>

@@ -11,11 +11,11 @@ const RefundPolicy = () => {
 
           <div className="terms-block">
             <p>
-              At Airport Express ("Company," "we," "our," or "us"), we strive to
-              provide reliable and efficient transportation services. However,
-              we understand that cancellations may be necessary. This Refund
-              Policy outlines the conditions under which refunds are issued for
-              canceled bookings.
+              At Airport Express (&quot;Company,&quot; &quot;we,&quot;
+              &quot;our,&quot; or &quot;us&quot;), we strive to provide reliable
+              and efficient transportation services. However, we understand that
+              cancellations may be necessary. This Refund Policy outlines the
+              conditions under which refunds are issued for canceled bookings.
             </p>
           </div>
 
@@ -55,7 +55,7 @@ const RefundPolicy = () => {
               <ul>
                 <li>
                   If you are required to reschedule and provide more than 3
-                  hours' notice, there is no additional charge for the new
+                  hours&apos; notice, there is no additional charge for the new
                   scheduled time.
                 </li>
               </ul>
