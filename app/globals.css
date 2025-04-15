@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 /* Global Styles */
 body {
   font-family: Arial, sans-serif;
@@ -234,108 +238,210 @@ h2 {
 }
 
 /* Form */
+/* Wrapper */
+/* Form Wrapper */
 .booking-form {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #121212; /* Dark background */
-  color: #fff; /* White text */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding: 20px;
+  align-items: flex-start;
+  padding: 40px 20px;
 }
 
-/* Booking Form */
+/* Form Container */
 form {
-  background: #1e1e1e;
-  padding: 20px;
-  border-radius: 10px;
+  background-color: #1e1e1e;
+  padding: 30px 40px;
+  border-radius: 12px;
   width: 100%;
-  max-width: 500px;
-  box-shadow: 0px 4px 10px rgba(255, 87, 34, 0.5);
+  max-width: 900px;
+  box-shadow: 0 8px 24px rgba(255, 87, 34, 0.3);
+  color: #ffffff;
+  box-sizing: border-box;
 }
 
-/* Section Headings */
+/* Headings */
 h2 {
+  font-size: 24px;
   color: #ff5722;
-  text-align: center;
+  margin-bottom: 20px;
   border-bottom: 2px solid #ff5722;
-  padding-bottom: 5px;
+  padding-bottom: 6px;
+}
+
+h3 {
+  font-size: 18px;
+  color: #ffccbc;
+  margin-top: 30px;
   margin-bottom: 15px;
+  border-bottom: 1px solid #ff5722;
+  padding-bottom: 5px;
 }
 
 /* Labels */
 label {
   display: block;
-  font-weight: bold;
-  margin: 10px 0 5px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #ffffff;
 }
 
-/* Input Fields */
+/* Inputs & Selects */
 input,
 select {
   width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
+  max-width: 100%;
+  padding: 10px 12px;
   border: 1px solid #ff5722;
-  border-radius: 5px;
+  border-radius: 6px;
   background-color: #282828;
-  color: white;
+  color: #ffffff;
+  font-size: 14px;
+  margin-bottom: 20px;
+  transition: border 0.2s;
+}
+
+input:focus,
+select:focus {
+  border-color: #ffccbc;
+  outline: none;
+  background-color: #1e1e1e;
+}
+
+/* Radio Group */
+.radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  font-weight: normal;
+}
+
+input[type="radio"] {
+  margin-right: 8px;
+}
+
+/* Two-column layout for inputs */
+.form-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.form-row > div {
+  flex: 1 1 0;
+  min-width: 250px;
   box-sizing: border-box;
 }
 
-/* Two Fields in One Row */
-.form-row {
+/* Trip Type Buttons */
+.trip-type-buttons {
   display: flex;
-  gap: 10px;
   flex-wrap: wrap;
+  gap: 10px;
+  margin: 10px 0 25px;
 }
 
-.form-row div {
+.trip-type-buttons button {
   flex: 1;
-  min-width: 150px; /* Prevents inputs from getting too small */
-}
-
-/* Radio Buttons */
-input[type="radio"] {
-  width: auto;
-  margin-right: 5px;
-}
-
-/* Buttons */
-button {
-  width: 100%;
-  padding: 12px;
-  border: none;
-  border-radius: 5px;
-  background-color: #ff5722;
-  color: white;
-  font-size: 16px;
+  padding: 10px;
+  background-color: #333;
+  border: 1px solid #ff5722;
+  border-radius: 6px;
+  font-weight: 600;
+  color: #fff;
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.2s ease;
+}
+
+.trip-type-buttons button:hover {
+  background-color: #ff5722;
+  color: #000;
+  border-color: #ffccbc;
+}
+
+/* Bag section box */
+.bag-section {
+  background-color: #2a2a2a;
+  border: 1px dashed #ff5722;
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+/* Submit Button */
+button[type="submit"] {
+  background-color: #ff5722;
+  color: #fff;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  width: 100%;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
   margin-top: 10px;
 }
 
-button:hover {
+button[type="submit"]:hover {
   background-color: #e64a19;
 }
 
-/* Responsive Design */
-@media (max-width: 600px) {
+/* Paragraph Helper */
+p {
+  color: #ffccbc;
+  font-size: 13px;
+  margin-top: -10px;
+  margin-bottom: 15px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
   form {
-    width: 95%;
+    padding: 25px 20px;
   }
 
   .form-row {
     flex-direction: column;
-    gap: 5px;
+    gap: 0;
   }
 
-  button {
-    font-size: 14px;
-    padding: 10px;
+  .trip-type-buttons {
+    flex-direction: column;
+  }
+
+  button[type="submit"] {
+    font-size: 15px;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-row > div {
+    min-width: 100%;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+
+  input,
+  select {
+    font-size: 13px;
   }
 }
 
@@ -400,4 +506,95 @@ button:hover {
 .terms-block ul {
   padding-left: 20px;
   list-style: disc;
+}
+
+/* Toggle */
+/* Toggle */
+.airport-toggle-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.airport-toggle-container p {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0;
+  color: #ffffff;
+  flex: 1;
+  min-width: 200px;
+}
+
+.airport-toggle-form {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 90px;
+  height: 30px;
+  background-color: #282828;
+  border-radius: 15px;
+  padding: 0;
+  box-shadow: inset 0 0 3px rgba(255, 87, 34, 0.3);
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.airport-toggle-form input[type="radio"] {
+  display: none;
+}
+
+.airport-label {
+  flex: 1;
+  text-align: center;
+  font-weight: 600;
+  z-index: 2;
+  cursor: pointer;
+  user-select: none;
+  color: #ffffff;
+  font-size: 0.85rem;
+  transition: color 0.3s ease;
+  line-height: 30px;
+  margin-top: 4px;
+}
+
+.airport-toggle-pill {
+  position: absolute;
+  height: 24px;
+  width: 40px;
+  background-color: #ff5722;
+  border-radius: 12px;
+  top: 3px;
+  left: 3px;
+  transition: left 0.3s ease;
+  z-index: 1;
+}
+
+/* Move toggle to right when "No" is selected */
+#airport-no:checked ~ .airport-toggle-pill {
+  left: 47px;
+}
+
+/* Highlight active label */
+#airport-yes:checked ~ .airport-label-yes,
+#airport-no:checked ~ .airport-label-no {
+  color: #000;
+  font-weight: bold;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+  .airport-toggle-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .airport-toggle-container p {
+    margin-bottom: 10px;
+  }
+
+  .airport-toggle-form {
+    margin-top: 0;
+  }
 }
