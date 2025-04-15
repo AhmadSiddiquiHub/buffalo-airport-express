@@ -39,9 +39,21 @@ const Form = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleBagDetailChange = (index: number, key: string, value: string) => {
-    const updatedBags: any = [...formData.bagDetails];
-    updatedBags[index][key] = value;
+  type BagDetail = {
+    size: string;
+    weight: string;
+  };
+
+  const handleBagDetailChange = (
+    index: number,
+    key: keyof BagDetail,
+    value: string
+  ) => {
+    const updatedBags: BagDetail[] = [...formData.bagDetails];
+    updatedBags[index] = {
+      ...updatedBags[index],
+      [key]: value,
+    };
     setFormData({ ...formData, bagDetails: updatedBags });
   };
 
