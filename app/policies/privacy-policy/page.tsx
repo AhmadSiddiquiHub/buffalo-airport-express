@@ -16,7 +16,7 @@ const PrivacyPolicy = () => {
               are committed to protecting your personal data. This Privacy
               Policy outlines how we collect, use, and protect your information
               when you use our website and airport transportation services (the
-              "Services")
+              &quot;Services&quot;)
             </p>
           </div>
 
