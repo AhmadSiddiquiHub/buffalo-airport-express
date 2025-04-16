@@ -351,6 +351,10 @@ input[type="radio"] {
   margin: 10px 0 25px;
 }
 
+.trip-type-buttons .selected-trip-type {
+  background-color: #ff5722;
+}
+
 .trip-type-buttons button {
   flex: 1;
   padding: 10px;
@@ -509,7 +513,6 @@ p {
 }
 
 /* Toggle */
-/* Toggle */
 .airport-toggle-container {
   display: flex;
   justify-content: space-between;
@@ -597,4 +600,24 @@ p {
   .airport-toggle-form {
     margin-top: 0;
   }
+}
+
+#children-no:checked ~ .airport-toggle-pill {
+  left: 47px;
+}
+
+#children-yes:checked ~ .airport-label-yes,
+#children-no:checked ~ .airport-label-no {
+  color: #000;
+  font-weight: bold;
+}
+
+#carseat-no:checked ~ .airport-toggle-pill {
+  left: 47px;
+}
+
+#carseat-yes:checked ~ .airport-label-yes,
+#carseat-no:checked ~ .airport-label-no {
+  color: #000;
+  font-weight: bold;
 }

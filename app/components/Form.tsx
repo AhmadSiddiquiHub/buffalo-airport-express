@@ -25,7 +25,7 @@ const Form = () => {
     nonAirportDropoffTime: "",
     numBags: 1,
     bagDetails: [{ size: "medium", weight: "" }],
-    hasChildren: "",
+    hasChildren: "no",
     hasCarSeat: "",
     carSeatsToRent: 0,
     carType: "sedan",
@@ -66,30 +66,6 @@ const Form = () => {
     <div className="booking-form">
       <form onSubmit={handleSubmit}>
         <h2>Step 1: Trip Details</h2>
-
-        {/* <div className="radio-group">
-          <label>Are you being dropped off or picked up at an airport?</label>
-          <label>
-            <input
-              type="radio"
-              name="airport"
-              value="yes"
-              checked={formData.airport === "yes"}
-              onChange={handleChange}
-            />
-            Yes
-          </label>
-          <label>
-            <input
-              type="radio"
-              name="airport"
-              value="no"
-              checked={formData.airport === "no"}
-              onChange={handleChange}
-            />
-            No
-          </label>
-        </div> */}
 
         <div className="airport-toggle-container">
           <p>Are you being dropped off or picked up at an airport?</p>
@@ -181,6 +157,9 @@ const Form = () => {
                   key={type}
                   onClick={() =>
                     setFormData((prev) => ({ ...prev, tripType: type }))
+                  }
+                  className={
+                    formData.tripType === type ? "selected-trip-type" : ""
                   }
                 >
                   {type.charAt(0).toUpperCase() + type.slice(1)}
@@ -377,54 +356,79 @@ const Form = () => {
           </div>
         ))}
 
-        <h2>Step 3: Children</h2>
-        <div className="radio-group">
-          <label>
-            <input
-              type="radio"
-              name="hasChildren"
-              value="yes"
-              checked={formData.hasChildren === "yes"}
-              onChange={handleChange}
-            />
-            Yes
-          </label>
-          <label>
-            <input
-              type="radio"
-              name="hasChildren"
-              value="no"
-              checked={formData.hasChildren === "no"}
-              onChange={handleChange}
-            />
-            No
-          </label>
+        <div>
+          <h2>Step 3: Children</h2>
+          <div className="airport-toggle-container">
+            <p>Do you have children under 7 years of age?</p>
+            <div className="airport-toggle-form">
+              <input
+                type="radio"
+                id="children-yes"
+                name="hasChildren"
+                value="yes"
+                checked={formData.hasChildren === "yes"}
+                onChange={handleChange}
+              />
+              <input
+                type="radio"
+                id="children-no"
+                name="hasChildren"
+                value="no"
+                checked={formData.hasChildren === "no"}
+                onChange={handleChange}
+              />
+              <label
+                htmlFor="children-yes"
+                className="airport-label airport-label-yes"
+              >
+                Yes
+              </label>
+              <div className="airport-toggle-pill"></div>
+              <label
+                htmlFor="children-no"
+                className="airport-label airport-label-no"
+              >
+                No
+              </label>
+            </div>
+          </div>
         </div>
 
         {formData.hasChildren === "yes" && (
           <>
-            <label>Do you have a car seat/booster?</label>
-            <div className="radio-group">
-              <label>
+            <div className="airport-toggle-container">
+              <p>Do you have a car seat/booster?</p>
+              <div className="airport-toggle-form">
                 <input
                   type="radio"
+                  id="carseat-yes"
                   name="hasCarSeat"
                   value="yes"
                   checked={formData.hasCarSeat === "yes"}
                   onChange={handleChange}
                 />
-                Yes
-              </label>
-              <label>
                 <input
                   type="radio"
+                  id="carseat-no"
                   name="hasCarSeat"
                   value="no"
                   checked={formData.hasCarSeat === "no"}
                   onChange={handleChange}
                 />
-                No
-              </label>
+                <label
+                  htmlFor="carseat-yes"
+                  className="airport-label airport-label-yes"
+                >
+                  Yes
+                </label>
+                <div className="airport-toggle-pill"></div>
+                <label
+                  htmlFor="carseat-no"
+                  className="airport-label airport-label-no"
+                >
+                  No
+                </label>
+              </div>
             </div>
 
             {formData.hasCarSeat === "no" && (
