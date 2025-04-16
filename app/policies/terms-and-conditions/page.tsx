@@ -146,11 +146,11 @@ const TermsAndConditions = () => {
             <br />
             <p>
               For any questions regarding this Terms and Conditions, please
-              contact us at
-            </p>
-            <p>
-              buffaloairportexpress@yahoo.com , (800) 604 &ndash; 1570, or (716)
-              472 &ndash; 8580
+              contact us at{" "}
+              <a href="mailto:buffaloairportexpress@yahoo.com">
+                buffaloairportexpress@yahoo.com
+              </a>
+              , (800) 604 &ndash; 1570, or (716) 472 &ndash; 8580
             </p>
           </div>
         </div>
