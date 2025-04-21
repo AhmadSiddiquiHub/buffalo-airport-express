@@ -30,12 +30,20 @@ const Form = () => {
     carSeatsToRent: 0,
     carType: "sedan",
     pricingType: "flat",
+    numberOfPassengers: 0,
+    address: "",
   });
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
     const { name, value } = e.target;
+    // Prevent negative car seat values
+    if (
+      (name === "carSeatsToRent" || name === "numberOfPassengers") &&
+      Number(value) < 0
+    )
+      return;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
@@ -124,6 +132,7 @@ const Form = () => {
                 />
               </div>
             </div>
+
             <div className="form-row">
               <div>
                 <label>Dropoff Location:</label>
@@ -140,6 +149,27 @@ const Form = () => {
                   type="time"
                   name="nonAirportDropoffTime"
                   value={formData.nonAirportDropoffTime}
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
+            <div className="form-row">
+              <div>
+                <label>Number of Passengers:</label>
+                <input
+                  type="number"
+                  name="numberOfPassengers"
+                  min="0"
+                  value={formData.numberOfPassengers}
+                  onChange={handleChange}
+                />
+              </div>
+              <div>
+                <label>Address:</label>
+                <input
+                  type="text"
+                  name="address"
+                  value={formData.address}
                   onChange={handleChange}
                 />
               </div>
@@ -202,7 +232,7 @@ const Form = () => {
                     />
                   </div>
                   <div>
-                    <label>Head Passenger:</label>
+                    <label>Passenger Booking Ride:</label>
                     <input
                       type="text"
                       name="headPassenger"
@@ -256,7 +286,7 @@ const Form = () => {
                     />
                   </div>
                   <div>
-                    <label>Passenger Name:</label>
+                    <label>Passenger Booking Ride:</label>
                     <input
                       type="text"
                       name="passengerName"
@@ -305,7 +335,7 @@ const Form = () => {
         )}
 
         <h2>Step 2: Baggage</h2>
-        <label>How many bags do you have?</label>
+        <label>How many bags does your party have?</label>
         <select
           name="numBags"
           value={formData.numBags}
@@ -433,17 +463,18 @@ const Form = () => {
 
             {formData.hasCarSeat === "no" && (
               <>
-                <p>
-                  Car seat rental is <strong>$10 per child</strong> and is
-                  required by law.
-                </p>
                 <label>How many car seats do you want to rent?</label>
                 <input
                   type="number"
                   name="carSeatsToRent"
+                  min="0"
                   value={formData.carSeatsToRent}
                   onChange={handleChange}
                 />
+                <p className="ext-seat-para">
+                  Car seat rental is <strong>$10 per child</strong> and is
+                  required by law.
+                </p>
               </>
             )}
           </>

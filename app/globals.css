@@ -621,3 +621,12 @@ p {
   color: #000;
   font-weight: bold;
 }
+
+/* Extra CSS */
+.ext-seat-para {
+  font-size: 15px;
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
